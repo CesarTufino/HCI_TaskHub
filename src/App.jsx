@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
-import TaskCard from './components/TaskDetail/TaskDetail'
-import PlusButton from './components/PlusButton/PlusButton'
-import Calendar from './components/Calendar/Calendar'
-import TasksFilter from './components/TasksFilter/TasksFilter'
+import Header from './components/moleculas/Header/Header'
+import Footer from './components/moleculas/Footer/Footer'
+import TaskCards from './components/organismos/TasksDetail/TasksDetail'
+import PlusButton from './components/atomos/PlusButton/PlusButton'
+import Calendar from './components/moleculas/Calendar/Calendar'
+import TasksFilter from './components/moleculas/TasksFilter/TasksFilter'
 
 function App() {
   const usuarios = ['Usuario 1', 'Usuario 2', 'Usuario 3'];
@@ -56,10 +56,8 @@ function App() {
             onSelect={(value) => console.log(value)}
           />
         </div>
-        <div className="space-y-[13px] p-[13px]">
-          {tasks.map((task, index) => (
-            <TaskCard key={index} task={task} />
-          ))}
+        <div>
+        <TaskCards tasks={tasks} />
         </div>
         <PlusButton className='fixed bottom-[85px] right-[10px]' />
       </main>
